@@ -83,7 +83,82 @@ st.markdown("""
         text-transform: uppercase;
         letter-spacing: 1px;
         padding: 1rem 0 0.5rem 0;
-        margin-top: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    /* Remove bullet points from radio buttons */
+    [data-testid="stSidebar"] .stRadio > div {
+        gap: 0 !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio > div > label {
+        background: transparent;
+        border: none;
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        margin: 2px 0;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        display: flex;
+        align-items: center;
+    }
+
+    [data-testid="stSidebar"] .stRadio > div > label:hover {
+        background: rgba(102, 126, 234, 0.1);
+    }
+
+    [data-testid="stSidebar"] .stRadio > div > label[data-checked="true"],
+    [data-testid="stSidebar"] .stRadio > div > label:has(input:checked) {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white !important;
+    }
+
+    /* Hide radio circle */
+    [data-testid="stSidebar"] .stRadio > div > label > div:first-child {
+        display: none !important;
+    }
+
+    [data-testid="stSidebar"] .stRadio > div > label > div {
+        color: #c9d1d9;
+        font-size: 0.9rem;
+    }
+
+    [data-testid="stSidebar"] .stRadio > div > label:has(input:checked) > div {
+        color: white !important;
+    }
+
+    /* Menu item with badge */
+    .menu-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 0.8rem;
+        border-radius: 8px;
+        color: #c9d1d9;
+        cursor: pointer;
+        margin: 2px 0;
+    }
+
+    .menu-item:hover {
+        background: rgba(102, 126, 234, 0.1);
+    }
+
+    .menu-item.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+
+    .menu-badge {
+        background: #f85149;
+        color: white;
+        font-size: 0.7rem;
+        padding: 2px 6px;
+        border-radius: 10px;
+        font-weight: 600;
+    }
+
+    .menu-badge-orange {
+        background: #d29922;
     }
 
     /* KPI Cards */
@@ -311,59 +386,144 @@ st.markdown("""
         font-weight: 600;
     }
 
-    /* Login Page */
+    /* Login Page - Compact */
     .login-container {
-        max-width: 400px;
-        margin: 4rem auto;
-        padding: 2rem;
+        max-width: 360px;
+        margin: 2rem auto;
+        padding: 1.5rem;
         background: linear-gradient(135deg, #21262d 0%, #1a2332 100%);
         border: 1px solid #30363d;
-        border-radius: 20px;
+        border-radius: 16px;
         text-align: center;
     }
 
     .login-logo {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 20px;
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         color: white;
-        margin: 0 auto 1.5rem;
+        margin: 0 auto 1rem;
     }
 
     .login-title {
         color: #f0f6fc;
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         font-weight: 700;
-        margin-bottom: 0.25rem;
+        margin-bottom: 0.15rem;
     }
 
     .login-subtitle {
         color: #8b949e;
-        font-size: 0.9rem;
-        margin-bottom: 2rem;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
     }
 
-    /* Buttons */
-    .stButton > button {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
+    /* Google Button */
+    .google-btn {
+        background: #4285f4 !important;
+        color: white !important;
         border: none;
         border-radius: 10px;
-        padding: 0.75rem 2rem;
+        padding: 0.7rem 1.5rem;
         font-weight: 600;
         width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        cursor: pointer;
+        margin-top: 0.5rem;
+    }
+
+    .google-btn:hover {
+        background: #357abd !important;
+    }
+
+    /* Tab styling */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 0;
+        background: #161b22;
+        border-radius: 10px;
+        padding: 4px;
+    }
+
+    .stTabs [data-baseweb="tab"] {
+        background: transparent;
+        border-radius: 8px;
+        color: #8b949e;
+        padding: 8px 24px;
+    }
+
+    .stTabs [aria-selected="true"] {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white !important;
+    }
+
+    /* Compact inputs */
+    .stTextInput > div > div > input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .stTextInput > label {
+        font-size: 0.85rem;
+        color: #c9d1d9;
+    }
+
+    /* Buttons - Testo bianco sempre visibile */
+    .stButton > button {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 10px;
+        padding: 0.75rem 2rem;
+        font-weight: 600 !important;
+        font-size: 0.95rem !important;
+        width: 100%;
         transition: all 0.3s ease;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     }
 
     .stButton > button:hover {
+        background: linear-gradient(135deg, #7b8eef 0%, #8a5cb5 100%) !important;
+        color: #ffffff !important;
         transform: translateY(-2px);
         box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+    }
+
+    .stButton > button:focus {
+        color: #ffffff !important;
+        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.5);
+    }
+
+    .stButton > button:active {
+        color: #ffffff !important;
+        transform: translateY(0);
+    }
+
+    /* Button text span */
+    .stButton > button > div,
+    .stButton > button > span,
+    .stButton > button p {
+        color: #ffffff !important;
+    }
+
+    /* Secondary/outline buttons */
+    .stButton > button[kind="secondary"] {
+        background: transparent !important;
+        border: 2px solid #667eea !important;
+        color: #667eea !important;
+    }
+
+    .stButton > button[kind="secondary"]:hover {
+        background: rgba(102, 126, 234, 0.1) !important;
+        color: #667eea !important;
     }
 
     /* Input Fields */
@@ -472,25 +632,68 @@ STAGE_COLORS = {
 }
 STAGE_PROB = {'Lead': 10, 'Contatto': 20, 'Contratto Inviato': 40, 'Negoziazione': 50, 'Proposta Inviata': 60, 'Qualificato': 75, 'Cliente Attivo': 100}
 
+# ========== DATI DEMO FITTIZI ==========
+
+DEMO_CONTATTI = [
+    {'id': 1, 'nome': 'Marco', 'cognome': 'Rossi', 'azienda': 'Rossi Holding SpA', 'ruolo': 'CEO', 'email': 'marco.rossi@holding.it', 'telefono': '+39 02 1234567', 'tier': 'A', 'fonte': 'Referral', 'aum_potenziale': 2500000, 'is_cliente': True, 'note': 'Cliente premium'},
+    {'id': 2, 'nome': 'Laura', 'cognome': 'Bianchi', 'azienda': 'Bianchi Investimenti', 'ruolo': 'CFO', 'email': 'laura.bianchi@invest.it', 'telefono': '+39 02 2345678', 'tier': 'A', 'fonte': 'LinkedIn', 'aum_potenziale': 1800000, 'is_cliente': True, 'note': 'Interessata a fondi ESG'},
+    {'id': 3, 'nome': 'Giuseppe', 'cognome': 'Verdi', 'azienda': 'Verdi & Partners', 'ruolo': 'Managing Partner', 'email': 'g.verdi@partners.it', 'telefono': '+39 02 3456789', 'tier': 'A+', 'fonte': 'Evento', 'aum_potenziale': 3200000, 'is_cliente': True, 'note': 'Portafoglio diversificato'},
+    {'id': 4, 'nome': 'Federica', 'cognome': 'Gentile', 'azienda': 'Gentile Family Office', 'ruolo': 'Owner', 'email': 'federica@gentile.it', 'telefono': '+39 02 4567890', 'tier': 'A', 'fonte': 'Referral', 'aum_potenziale': 3800000, 'is_cliente': False, 'note': 'In negoziazione'},
+    {'id': 5, 'nome': 'Paolo', 'cognome': 'Mancini', 'azienda': 'Mancini Group', 'ruolo': 'President', 'email': 'paolo@mancini.it', 'telefono': '+39 02 5678901', 'tier': 'A+', 'fonte': 'Cold Call', 'aum_potenziale': 2800000, 'is_cliente': False, 'note': 'Contratto inviato'},
+    {'id': 6, 'nome': 'Sara', 'cognome': 'Rinaldi', 'azienda': 'Rinaldi Consulting', 'ruolo': 'Founder', 'email': 'sara@rinaldi.it', 'telefono': '+39 02 6789012', 'tier': 'B', 'fonte': 'Website', 'aum_potenziale': 2600000, 'is_cliente': False, 'note': 'Primo contatto positivo'},
+    {'id': 7, 'nome': 'Valentina', 'cognome': 'Costa', 'azienda': 'Costa Enterprises', 'ruolo': 'CEO', 'email': 'v.costa@enterprises.it', 'telefono': '+39 02 7890123', 'tier': 'B', 'fonte': 'Referral', 'aum_potenziale': 2200000, 'is_cliente': False, 'note': 'Proposta inviata'},
+    {'id': 8, 'nome': 'Andrea', 'cognome': 'Santoro', 'azienda': 'Santoro Wealth', 'ruolo': 'Director', 'email': 'andrea@santoro.it', 'telefono': '+39 02 8901234', 'tier': 'B', 'fonte': 'LinkedIn', 'aum_potenziale': 2000000, 'is_cliente': False, 'note': 'Qualificato'},
+    {'id': 9, 'nome': 'Elena', 'cognome': 'Ferrari', 'azienda': 'Ferrari Investments', 'ruolo': 'Partner', 'email': 'elena@ferrari.it', 'telefono': '+39 02 9012345', 'tier': 'A', 'fonte': 'Evento', 'aum_potenziale': 1500000, 'is_cliente': True, 'note': 'Cliente da 2 anni'},
+    {'id': 10, 'nome': 'Roberto', 'cognome': 'Marino', 'azienda': 'Marino Capital', 'ruolo': 'Founder', 'email': 'roberto@marino.it', 'telefono': '+39 02 0123456', 'tier': 'C', 'fonte': 'Website', 'aum_potenziale': 500000, 'is_cliente': False, 'note': 'Lead'},
+]
+
+DEMO_PIPELINE = [
+    {'id': 1, 'nome_deal': 'Deal Federica Gentile', 'stage': 'Negoziazione', 'aum_previsto': 3800000, 'probabilita': 75, 'fee_percentuale': 0.5, 'fee_stimata': 19000, 'fonte': 'Referral', 'responsabile': 'Antonio Tritto', 'note': 'Deal molto promettente'},
+    {'id': 2, 'nome_deal': 'Deal Paolo Mancini', 'stage': 'Contratto Inviato', 'aum_previsto': 2800000, 'probabilita': 65, 'fee_percentuale': 0.5, 'fee_stimata': 14000, 'fonte': 'Cold Call', 'responsabile': 'Antonio Tritto', 'note': 'In attesa firma'},
+    {'id': 3, 'nome_deal': 'Deal Sara Rinaldi', 'stage': 'Contratto Inviato', 'aum_previsto': 2600000, 'probabilita': 65, 'fee_percentuale': 0.5, 'fee_stimata': 13000, 'fonte': 'Website', 'responsabile': 'Antonio Tritto', 'note': 'Secondo incontro fissato'},
+    {'id': 4, 'nome_deal': 'Deal Valentina Costa', 'stage': 'Proposta Inviata', 'aum_previsto': 2200000, 'probabilita': 60, 'fee_percentuale': 0.5, 'fee_stimata': 11000, 'fonte': 'Referral', 'responsabile': 'Antonio Tritto', 'note': 'Proposta in valutazione'},
+    {'id': 5, 'nome_deal': 'Deal Andrea Santoro', 'stage': 'Qualificato', 'aum_previsto': 2000000, 'probabilita': 40, 'fee_percentuale': 0.5, 'fee_stimata': 10000, 'fonte': 'LinkedIn', 'responsabile': 'Antonio Tritto', 'note': 'Meeting fissato'},
+    {'id': 6, 'nome_deal': 'Deal Roberto Marino', 'stage': 'Lead', 'aum_previsto': 500000, 'probabilita': 10, 'fee_percentuale': 0.5, 'fee_stimata': 2500, 'fonte': 'Website', 'responsabile': 'Antonio Tritto', 'note': 'Da contattare'},
+    {'id': 7, 'nome_deal': 'Deal Nuovo Prospect 1', 'stage': 'Lead', 'aum_previsto': 800000, 'probabilita': 10, 'fee_percentuale': 0.5, 'fee_stimata': 4000, 'fonte': 'Evento', 'responsabile': 'Antonio Tritto', 'note': 'Primo contatto'},
+    {'id': 8, 'nome_deal': 'Deal Contatto Evento', 'stage': 'Contatto', 'aum_previsto': 1900000, 'probabilita': 20, 'fee_percentuale': 0.5, 'fee_stimata': 9500, 'fonte': 'Evento', 'responsabile': 'Antonio Tritto', 'note': 'Interessato'},
+    {'id': 9, 'nome_deal': 'Deal Contatto LinkedIn', 'stage': 'Contatto', 'aum_previsto': 1600000, 'probabilita': 20, 'fee_percentuale': 0.5, 'fee_stimata': 8000, 'fonte': 'LinkedIn', 'responsabile': 'Antonio Tritto', 'note': 'Call fissata'},
+    {'id': 10, 'nome_deal': 'Deal Marco Rossi', 'stage': 'Cliente Attivo', 'aum_previsto': 2500000, 'probabilita': 100, 'fee_percentuale': 0.5, 'fee_stimata': 12500, 'fonte': 'Referral', 'responsabile': 'Antonio Tritto', 'note': 'Cliente premium'},
+    {'id': 11, 'nome_deal': 'Deal Laura Bianchi', 'stage': 'Cliente Attivo', 'aum_previsto': 1800000, 'probabilita': 100, 'fee_percentuale': 0.5, 'fee_stimata': 9000, 'fonte': 'LinkedIn', 'responsabile': 'Antonio Tritto', 'note': 'Fondi ESG'},
+    {'id': 12, 'nome_deal': 'Deal Giuseppe Verdi', 'stage': 'Cliente Attivo', 'aum_previsto': 3200000, 'probabilita': 100, 'fee_percentuale': 0.5, 'fee_stimata': 16000, 'fonte': 'Evento', 'responsabile': 'Antonio Tritto', 'note': 'Diversificato'},
+    {'id': 13, 'nome_deal': 'Deal Elena Ferrari', 'stage': 'Cliente Attivo', 'aum_previsto': 1500000, 'probabilita': 100, 'fee_percentuale': 0.5, 'fee_stimata': 7500, 'fonte': 'Evento', 'responsabile': 'Antonio Tritto', 'note': 'Cliente storico'},
+    {'id': 14, 'nome_deal': 'Deal Negoziazione 2', 'stage': 'Negoziazione', 'aum_previsto': 2100000, 'probabilita': 50, 'fee_percentuale': 0.5, 'fee_stimata': 10500, 'fonte': 'Referral', 'responsabile': 'Antonio Tritto', 'note': 'In corso'},
+    {'id': 15, 'nome_deal': 'Deal Proposta 2', 'stage': 'Proposta Inviata', 'aum_previsto': 1700000, 'probabilita': 60, 'fee_percentuale': 0.5, 'fee_stimata': 8500, 'fonte': 'Cold Call', 'responsabile': 'Antonio Tritto', 'note': 'Follow-up'},
+]
+
 # ========== DATABASE FUNCTIONS ==========
 
 def get_contatti():
+    # Se in modalità demo, usa dati fittizi
+    if st.session_state.get('demo_mode', False):
+        return pd.DataFrame(DEMO_CONTATTI)
     if not supabase:
-        return pd.DataFrame()
+        return pd.DataFrame(DEMO_CONTATTI)  # Fallback a demo
     try:
         response = supabase.table('contatti').select('*').execute()
-        return pd.DataFrame(response.data) if response.data else pd.DataFrame()
+        if response.data:
+            return pd.DataFrame(response.data)
+        return pd.DataFrame(DEMO_CONTATTI)  # Se vuoto, usa demo
     except:
-        return pd.DataFrame()
+        return pd.DataFrame(DEMO_CONTATTI)
 
 def get_pipeline():
+    # Se in modalità demo, usa dati fittizi
+    if st.session_state.get('demo_mode', False):
+        return pd.DataFrame(DEMO_PIPELINE)
     if not supabase:
-        return pd.DataFrame()
+        return pd.DataFrame(DEMO_PIPELINE)  # Fallback a demo
     try:
         response = supabase.table('pipeline').select('*').execute()
-        return pd.DataFrame(response.data) if response.data else pd.DataFrame()
+        if response.data:
+            return pd.DataFrame(response.data)
+        return pd.DataFrame(DEMO_PIPELINE)  # Se vuoto, usa demo
     except:
-        return pd.DataFrame()
+        return pd.DataFrame(DEMO_PIPELINE)
 
 def add_contatto(data):
     if not supabase:
@@ -551,23 +754,26 @@ def delete_deal(id):
 # ========== AUTH FUNCTIONS ==========
 
 def show_login():
-    col1, col2, col3 = st.columns([1, 2, 1])
+    # Centra il login con colonne più strette
+    col1, col2, col3 = st.columns([1.5, 2, 1.5])
     with col2:
+        # Logo e titolo
         st.markdown("""
-        <div class="login-container">
+        <div style="text-align: center; margin-bottom: 1rem;">
             <div class="login-logo">AT</div>
-            <div class="login-title">CRM Antonio Tritto</div>
+            <div class="login-title">CRM for PRIVATE BANKER</div>
             <div class="login-subtitle">Private Banking Dashboard</div>
         </div>
         """, unsafe_allow_html=True)
 
+        # Tabs Accedi/Registrati
         tab1, tab2 = st.tabs(["Accedi", "Registrati"])
 
         with tab1:
             email = st.text_input("Email", placeholder="tua@email.com", key="login_email")
             password = st.text_input("Password", type="password", placeholder="La tua password", key="login_pass")
 
-            if st.button("Accedi", key="btn_login"):
+            if st.button("Accedi", key="btn_login", use_container_width=True):
                 if email and password:
                     try:
                         response = supabase.auth.sign_in_with_password({
@@ -582,20 +788,34 @@ def show_login():
                 else:
                     st.warning("Inserisci email e password")
 
-            st.markdown("---")
-            st.markdown("<center><small style='color: #8b949e;'>oppure</small></center>", unsafe_allow_html=True)
+            st.markdown("<div style='text-align: center; color: #8b949e; margin: 0.8rem 0; font-size: 0.85rem;'>oppure</div>", unsafe_allow_html=True)
 
-            if st.button("🔑 Accesso Demo", key="btn_demo"):
-                st.session_state.logged_in = True
-                st.session_state.user = {"email": "demo@antoniotritto.com"}
-                st.rerun()
+            # Google Login Button
+            if st.button("G  Accedi con Google", key="btn_google", use_container_width=True):
+                try:
+                    # Supabase OAuth con Google
+                    if supabase:
+                        response = supabase.auth.sign_in_with_oauth({
+                            "provider": "google",
+                            "options": {"redirect_to": "https://crm-streamlit.streamlit.app"}
+                        })
+                        if response and response.url:
+                            st.markdown(f'<meta http-equiv="refresh" content="0;url={response.url}">', unsafe_allow_html=True)
+                    else:
+                        st.session_state.logged_in = True
+                        st.session_state.user = {"email": "google@demo.com"}
+                        st.rerun()
+                except Exception as e:
+                    st.error(f"Errore Google login: {e}")
+
+            st.markdown("<div style='text-align: center; margin-top: 1rem;'><small style='color: #8b949e;'>Non hai un account? </small><a href='#' style='color: #3fb950; text-decoration: none;'>Registrati</a></div>", unsafe_allow_html=True)
 
         with tab2:
             reg_email = st.text_input("Email", placeholder="tua@email.com", key="reg_email")
             reg_password = st.text_input("Password", type="password", placeholder="Crea password", key="reg_pass")
             reg_password2 = st.text_input("Conferma Password", type="password", placeholder="Conferma password", key="reg_pass2")
 
-            if st.button("Registrati", key="btn_register"):
+            if st.button("Registrati", key="btn_register", use_container_width=True):
                 if reg_password != reg_password2:
                     st.error("Le password non coincidono")
                 elif reg_email and reg_password:
@@ -608,6 +828,14 @@ def show_login():
                     except Exception as e:
                         st.error(f"Errore registrazione: {e}")
 
+        # Accesso Demo in basso
+        st.markdown("<br>", unsafe_allow_html=True)
+        if st.button("🔑 Accesso Demo (dati fittizi)", key="btn_demo", use_container_width=True):
+            st.session_state.logged_in = True
+            st.session_state.user = {"email": "demo@antoniotritto.com"}
+            st.session_state.demo_mode = True
+            st.rerun()
+
 # ========== SIDEBAR ==========
 
 def show_sidebar():
@@ -617,44 +845,51 @@ def show_sidebar():
         <div class="logo-container">
             <div class="logo-icon">AT</div>
             <div>
-                <div class="logo-text">CRM Antonio Tritto</div>
+                <div class="logo-text">CRM for PRIVATE BANKER</div>
                 <div class="logo-subtitle">PRIVATE BANKING</div>
             </div>
         </div>
         """, unsafe_allow_html=True)
 
-        st.markdown("---")
-
         # Menu Principale
         st.markdown('<div class="menu-header">MENU PRINCIPALE</div>', unsafe_allow_html=True)
 
-        menu_options = {
-            "Dashboard": "📊",
-            "Contatti": "👥",
-            "Pipeline": "🎯",
-            "Contratti": "📄"
-        }
+        # Menu con selectbox nascosto per la selezione
+        menu_items = ["Dashboard", "Contatti", "Pipeline", "Contratti"]
+        menu_icons = {"Dashboard": "📊", "Contatti": "👥", "Pipeline": "🎯", "Contratti": "📄"}
+        menu_badges = {"Contatti": "5", "Pipeline": "12"}
 
         selected = st.radio(
             "Menu",
-            list(menu_options.keys()),
-            format_func=lambda x: f"{menu_options[x]} {x}",
-            label_visibility="collapsed"
+            menu_items,
+            format_func=lambda x: f"{menu_icons.get(x, '')} {x}",
+            label_visibility="collapsed",
+            key="main_menu"
         )
 
         # Operatività
         st.markdown('<div class="menu-header">OPERATIVITÀ</div>', unsafe_allow_html=True)
 
-        op_options = ["Rubrica Contatti", "Chiamate", "AUM Tracking", "Email Marketing"]
-        op_selected = st.radio("Operatività", op_options, label_visibility="collapsed", key="op_menu")
+        op_items = ["📋 Rubrica Contatti", "📞 Chiamate", "📈 AUM Tracking", "✉️ Email Marketing", "🎯 Funnel Email"]
+        for item in op_items:
+            badge = ""
+            if "Chiamate" in item:
+                badge = "<span class='menu-badge'>3</span>"
+            st.markdown(f"<div class='menu-item'><span>{item}</span>{badge}</div>", unsafe_allow_html=True)
 
         # Analisi
         st.markdown('<div class="menu-header">ANALISI</div>', unsafe_allow_html=True)
 
-        an_options = ["Dashboard Revenue", "Analisi Conversione", "Cash Flow 12 mesi", "Analytics", "Report"]
-        an_selected = st.radio("Analisi", an_options, label_visibility="collapsed", key="an_menu")
+        an_items = ["💰 Dashboard Revenue", "📊 Analisi Conversione", "💵 Cash Flow 12 mesi", "📉 Analytics", "📋 Report"]
+        for item in an_items:
+            st.markdown(f"<div class='menu-item'><span>{item}</span></div>", unsafe_allow_html=True)
 
-        st.markdown("---")
+        # Gestione Dati
+        st.markdown('<div class="menu-header">GESTIONE DATI</div>', unsafe_allow_html=True)
+        st.markdown("<div class='menu-item'><span>🗄️ Gestione DB</span></div>", unsafe_allow_html=True)
+        st.markdown("<div class='menu-item'><span>🔄 Aggiorna Dati</span></div>", unsafe_allow_html=True)
+
+        st.markdown("<br><br>", unsafe_allow_html=True)
 
         # User Profile
         user_email = st.session_state.get('user', {}).get('email', 'demo@antoniotritto.com')
@@ -668,9 +903,10 @@ def show_sidebar():
         </div>
         """, unsafe_allow_html=True)
 
-        if st.button("🚪 Esci", key="logout"):
+        if st.button("🚪 Esci", key="logout", use_container_width=True):
             st.session_state.logged_in = False
             st.session_state.user = None
+            st.session_state.demo_mode = False
             st.rerun()
 
         return selected
